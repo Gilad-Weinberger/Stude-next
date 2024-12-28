@@ -12,6 +12,7 @@
     "@nextui-org/alert": "^2.2.8",
     "@nextui-org/avatar": "^2.2.5",
     "@nextui-org/button": "^2.2.8",
+    "@nextui-org/modal": "^2.2.6",
     "@nextui-org/system": "^2.4.5",
     "@nextui-org/theme": "^2.4.4",
     "framer-motion": "^11.15.0",
