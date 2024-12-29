@@ -46,6 +46,25 @@ export default function Home() {
     }
   };
 
+  const SendEmail = async (userEmail: string) => {
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: userEmail }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        console.log("Email sent successfully:", data.message);
+      } else {
+        console.error("Error sending email:", data.error);
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  };
+
   return (
     <div className="flex flex-col items-center bg-[#FBFAF9] px-5 sm:px-[100px]">
       <div className="navbar border-b border-[#eee]">
@@ -117,7 +136,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div className="review mx-auto flex max-w-md flex-col items-center space-y-4 max-lg:px-4 md:my-24 md:space-y-6 lg:max-w-lg">
+      {/*<div className="review mx-auto flex max-w-md flex-col items-center space-y-4 max-lg:px-4 md:my-24 md:space-y-6 lg:max-w-lg">
         <div className="rating">
           <input
             type="radio"
@@ -246,8 +265,30 @@ export default function Home() {
               ✕
             </button>
           </form>
-          <h3 className="text-lg font-bold">Hello!</h3>
-          <p className="py-4">Press ESC key or click on ✕ button to close</p>
+          <h3 className="text-lg font-bold">Subscribe to our newsletter</h3>
+          <p className="py-4">Enter your email address to subscribe</p>
+          <input
+            type="email"
+            placeholder="Email"
+            className="input input-bordered w-full max-w-xs"
+            id="email_input"
+          />
+          <div className="modal-action">
+            <button
+              className="btn"
+              onClick={() => {
+                const emailInput = document.getElementById(
+                  "email_input",
+                ) as HTMLInputElement;
+                if (emailInput) {
+                  const email = emailInput.value;
+                  SendEmail(email);
+                }
+              }}
+            >
+              Subscribe
+            </button>
+          </div>
         </div>
       </dialog>
     </div>
