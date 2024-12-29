@@ -39,6 +39,11 @@ const StepCard = ({ step_number, image_src, title, text }: StepCardProps) => (
 );
 
 export default function Home() {
+  const openModal = () => {
+    const modal = document.getElementById("email_modal") as HTMLDialogElement;
+    if (modal) modal.showModal();
+  };
+
   return (
     <div className="flex flex-col items-center bg-[#FBFAF9] px-5 sm:px-[100px]">
       <div className="navbar border-b border-[#eee]">
@@ -64,7 +69,7 @@ export default function Home() {
           <Link
             href=""
             className="btn rounded-lg bg-[#434bbf] px-4 py-2.5 font-medium tracking-wide text-white hover:border-spacing-2 hover:border hover:border-[#434bbf] hover:bg-white hover:text-[#434bbf] hover:shadow-lg"
-            onClick={() => document.getElementById("email_modal")?.showModal()}
+            onClick={() => openModal}
           >
             Get Started
           </Link>
@@ -103,7 +108,7 @@ export default function Home() {
             <Link
               href=""
               className="btn mt-8 w-[440px] rounded-lg bg-[#434bbf] px-10 py-2.5 text-[16px] font-medium tracking-wide text-white hover:border-spacing-2 hover:border hover:border-[#434bbf] hover:bg-white hover:text-[#434bbf] hover:shadow-lg"
-              onClick={() => document.getElementById("email_modal").showModal()}
+              onClick={() => openModal}
             >
               Get Started
             </Link>
