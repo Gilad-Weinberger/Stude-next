@@ -41,7 +41,14 @@ const StepCard = ({ step_number, image_src, title, text }: StepCardProps) => (
 export default function Home() {
   const openModal = () => {
     const modal = document.getElementById("email_modal") as HTMLDialogElement;
-    if (modal) modal.showModal();
+    console.log(modal);
+    if (modal) {
+      modal.showModal();
+      console.log("model exists");
+    }
+    else{
+      console.log("modal does not exist")
+    }
   };
 
   return (
