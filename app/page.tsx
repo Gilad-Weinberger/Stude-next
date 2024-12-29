@@ -44,10 +44,6 @@ export default function Home() {
     console.log(modal);
     if (modal) {
       modal.showModal();
-      console.log("model exists");
-    }
-    else{
-      console.log("modal does not exist")
     }
   };
 
@@ -61,7 +57,7 @@ export default function Home() {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
+            {/* <li>
               <a>Pricing</a>
             </li>
             <li>
@@ -69,14 +65,14 @@ export default function Home() {
             </li>
             <li>
               <a>Reviews</a>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="navbar-end">
           <Link
             href=""
             className="btn rounded-lg bg-[#434bbf] px-4 py-2.5 font-medium tracking-wide text-white hover:border-spacing-2 hover:border hover:border-[#434bbf] hover:bg-white hover:text-[#434bbf] hover:shadow-lg"
-            onClick={() => openModal}
+            onClick={() => openModal()}
           >
             Get Started
           </Link>
@@ -115,7 +111,7 @@ export default function Home() {
             <Link
               href=""
               className="btn mt-8 w-[440px] rounded-lg bg-[#434bbf] px-10 py-2.5 text-[16px] font-medium tracking-wide text-white hover:border-spacing-2 hover:border hover:border-[#434bbf] hover:bg-white hover:text-[#434bbf] hover:shadow-lg"
-              onClick={() => openModal}
+              onClick={() => openModal()}
             >
               Get Started
             </Link>
